@@ -1,0 +1,164 @@
+/* The main overlay that darkens the screen */
+#snipping-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2147483645;
+    /* High z-index */
+    cursor: none;
+    /* Hide default cursor to show custom one */
+}
+
+/* The canvas where the user selects and annotates */
+#annotation-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2147483646;
+    /* On top of overlay */
+    cursor: none;
+    /* Hide default cursor during initial selection */
+}
+
+/* The annotation toolbar */
+#annotation-toolbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2d3436;
+    border-radius: 12px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 2147483647;
+    /* Highest z-index */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid #454545;
+}
+
+/* General styling for toolbar elements */
+#annotation-toolbar button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+    width: 40px;
+    height: 40px;
+}
+
+#annotation-toolbar button:hover {
+    background-color: #555;
+}
+
+#annotation-toolbar button.active {
+    background-color: #0984e3;
+}
+
+#annotation-toolbar button svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
+/* Styling for specific buttons */
+#save-btn {
+    background-color: #27ae60;
+}
+
+#save-btn:hover {
+    background-color: #2ecc71;
+}
+
+#cancel-btn {
+    background-color: #c0392b;
+}
+
+#cancel-btn:hover {
+    background-color: #e74c3c;
+}
+
+/* --- Tool Options Visibility --- */
+.tool-options {
+    display: none;
+    /* Hide options by default */
+    align-items: center;
+    gap: 8px;
+    padding: 0 10px;
+    border-left: 1px solid #555;
+    margin-left: 5px;
+}
+
+/* Show options when the parent toolbar has the correct class */
+#annotation-toolbar.draw-options-visible #draw-tool-options,
+#annotation-toolbar.text-options-visible #text-tool-options {
+    display: flex;
+}
+
+.tool-options label {
+    color: #ccc;
+    font-size: 12px;
+}
+
+.tool-options input[type="color"] {
+    width: 25px;
+    height: 25px;
+    border: none;
+    padding: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tool-options select {
+    background-color: #555;
+    color: white;
+    border: 1px solid #666;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+/* --- Custom Color-Sensitive Crosshair --- */
+#custom-crosshair {
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+    z-index: 2147483647;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#custom-crosshair::before,
+#custom-crosshair::after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    mix-blend-mode: difference;
+    box-shadow: 0 0 2px black;
+}
+
+/* Horizontal line of the crosshair */
+#custom-crosshair::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+}
+
+/* Vertical line of the crosshair */
+#custom-crosshair::after {
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+}

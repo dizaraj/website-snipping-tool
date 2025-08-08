@@ -1,0 +1,102 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 280px;
+    margin: 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 14px;
+    color: #34495e;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.main-actions button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    margin-bottom: 10px;
+}
+#start-capture-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+#start-capture-btn:hover {
+    background-color: #2980b9;
+}
+
+/* --- Review Tab Styles --- */
+.star-rating-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+}
+
+.star-rating-container .star {
+    color: #f59e0b;
+    /* amber-500 */
+    transition: transform 0.15s ease-in-out;
+    display: flex;
+    margin: 0 2px;
+    cursor: pointer;
+}
+
+.star-rating-container .star:hover {
+    transform: scale(1.15);
+    color: #f97316;
+    /* orange-500 */
+}
+
+.star-rating-container .star svg {
+    width: 32px;
+    height: 32px;
+    fill: currentColor;
+}
+
+#reviewBtn {
+    color: #ffffff;
+    background-color: #4f46e5;
+}
+
+#reviewBtn:hover {
+    background-color: #4338ca;
+}
+
+/* Footer Section */
+
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+
+.footer-links a {
+    color: #555;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
