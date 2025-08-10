@@ -25,8 +25,8 @@ Tired of taking a full-page screenshot, opening it in an editor, cropping it, an
 ### ✅ Permissions Explained
 This extension requests a few permissions to provide its features. Here’s why each one is needed:
 
-- `"activeTab"` & `"scripting"`: These permissions are used together to run the snipping and annotation tools on your current page. The extension does not read or alter the content of the web pages you visit.
-- `"storage"`: This permission is planned for future updates to save your preferred annotation settings (like color and font size). Your data is stored locally on your computer and is never transmitted.
+- `"activeTab"`: Used to enable the popup on your current tab. The extension does not read, track, or alter the content of any webpage you visit.
+- `"scripting"`: The permission is used to run the snipping and annotation tools on your current page.
 
 ### ⭐ Enjoying the Extension? Leave a Review!
 If you find this tool helpful, please consider leaving a 5-star review on the Chrome Web Store! Your feedback helps the extension grow and motivates future development.
